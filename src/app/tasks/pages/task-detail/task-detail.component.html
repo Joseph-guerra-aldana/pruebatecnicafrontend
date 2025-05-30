@@ -1,0 +1,22 @@
+<div class="card" *ngIf="task">
+    <div class="card-header">
+      <h5>Detalle de Tarea</h5>
+    </div>
+  
+    <div class="card-body">
+      <p><strong>Descripción:</strong> {{ task.description }}</p>
+      <p><strong>Asignado a:</strong> {{ task.assignedTo?.email || 'No asignado' }}</p>
+  
+      <div class="mb-3">
+        <label>Estado:</label>
+        <select [(ngModel)]="newStatus" class="form-select">
+          <option value="pendiente">Pendiente</option>
+          <option value="en-progreso">En Progreso</option>
+          <option value="completado">Completado</option>
+        </select>
+      </div>
+  
+      <button class="btn btn-primary" (click)="updateStatus()">Actualizar</button>
+    </div>
+  </div>
+  

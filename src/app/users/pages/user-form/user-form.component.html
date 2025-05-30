@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+      <h5>{{ id ? 'Editar Usuario' : 'Nuevo Usuario' }}</h5>
+    </div>
+  
+    <div class="card-body">
+      <form (ngSubmit)="save()">
+        <div class="mb-3">
+          <label>Email</label>
+          <input [(ngModel)]="user.email" name="email" class="form-control" required />
+        </div>
+  
+        <div class="mb-3" *ngIf="!id">
+          <label>Contraseña</label>
+          <input [(ngModel)]="user.password" name="password" class="form-control" type="password" required />
+        </div>
+  
+        <div class="mb-3">
+          <label>Rol</label>
+          <select [(ngModel)]="user.role" name="role" class="form-select">
+            <option value="admin">Admin</option>
+            <option value="normal">Normal</option>
+          </select>
+        </div>
+  
+        <button class="btn btn-primary" type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+  

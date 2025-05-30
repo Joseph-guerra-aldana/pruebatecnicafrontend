@@ -1,0 +1,56 @@
+.logo-img {
+    width: 60px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e65525;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .greeting-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+  }
+
+  .nav-item:hover{
+    color: #e65525;
+  }
+  
+  .greeting-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .logout-container {
+    padding: 0 20px;
+    margin-top: auto;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+  
+  .logout-btn i {
+    font-size: 18px;
+  }
+  
+  .logout-btn:hover {
+    color: #e65525;
+  }
+  

@@ -1,0 +1,30 @@
+<form (ngSubmit)="saveTask()">
+  <div class="mb-3">
+    <label>Título</label>
+    <input [(ngModel)]="task.title" name="title" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Descripción</label>
+    <input [(ngModel)]="task.description" name="description" class="form-control" required>
+  </div>
+
+  <div class="mb-3" *ngIf="role === 'admin'">
+    <label>Asignar a:</label>
+    <select [(ngModel)]="task.assignedTo" name="assignedTo" class="form-select" required>
+      <option value="">Seleccione un usuario</option>
+      <option *ngFor="let user of users" [value]="user._id">{{ user.email }}</option>
+    </select>
+  </div>
+  
+  <div class="mb-3">
+    <label for="status">Estado</label>
+    <select [(ngModel)]="task.status" name="status" class="form-select" required>
+      <option value="pending">Pendiente</option>
+      <option value="in_progress">En Progreso</option>
+      <option value="completed">Completado</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Guardar</button>
+</form>
